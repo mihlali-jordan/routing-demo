@@ -1,14 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { ROUTES } from "../constants";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
+
+/* Reach router imports */
+import { useNavigate, useLocation } from "@reach/router";
 
 const HomeScreen = () => {
-  const history = useHistory();
+  // const history = useHistory();
 
-  const navigate = (route) => {
-    history.push(route);
-  };
+  // const navigate = (route) => {
+  //   history.push(route);
+  // };
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  React.useEffect(() => {
+    console.log(location);
+  }, []);
+
   return (
     <div>
       <h1>Home Screen</h1>
